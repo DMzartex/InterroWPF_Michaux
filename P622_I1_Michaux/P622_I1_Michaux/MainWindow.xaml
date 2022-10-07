@@ -1,0 +1,78 @@
+﻿<Window x:Class="P622_I1_Michaux.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:P622_I1_Michaux"
+        mc:Ignorable="d"
+        Title="MainWindow" Background="#F2AB27" FontWeight="Bold" Height="450" Width="800" FontSize="22px">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical"  Grid.RowSpan="2">
+            <GroupBox Height="270px" Header="Paramétrage du jeu et des joueurs">
+
+                <StackPanel>
+                    
+                    <DockPanel>
+                        <TextBlock>Nombre de dés (de 6 à 8)</TextBlock>
+                        <TextBox Grid.Column="3" Width="40px" Height="20px"></TextBox>
+                    </DockPanel>
+
+                    <TextBlock Margin="0,20,0,0" Grid.Row="3" Grid.ColumnSpan="4">Joueurs déja inscrits ( de 2 à 4)</TextBlock>
+                    <ComboBox Margin="0,20,0,0">
+                        <ComboBoxItem Grid.Row="4">Nom du joueur</ComboBoxItem>
+                    </ComboBox>
+
+                    <DockPanel Margin="0,10,0,0">
+                        <TextBlock>Pseudo</TextBlock>
+                        <TextBox Width="150px"  Height="20px"></TextBox>
+                    </DockPanel>
+
+                    <Button x:Name="btnAjouter" Foreground="#D95829" Background="#F2E963" Margin="0,20,0,0">Ajouter</Button>
+
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <GroupBox Height="140px">
+                <StackPanel VerticalAlignment="Center">
+                    <Button x:Name="btnDemarrer" Foreground="#D95829" Background="#F2E963">Démarrer le jeu</Button>
+                    <Button x:Name="btnStopper" Foreground="#D95829" Background="#F2E963">Stopper  le jeu</Button>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.RowSpan="2">
+            <TextBlock Margin="25,0,0,0">C'est au tour de ...</TextBlock>
+            <Button x:Name="btnLancer" Width="350" Margin="0,10,0,0" Foreground="#D95829" Background="#F2E963">LANCER LES DES</Button>
+            <GroupBox Header="Résultats" Width="330px" Margin="0,20,0,0">
+                <StackPanel>
+                    <TextBlock Margin="0,5,0,0">Jet : (1)(2)(2)(5)(6)...</TextBlock>
+                    <TextBlock Margin="0,20,0,0">Jet : Points gagnés : ...</TextBlock>
+                    <TextBlock Margin="0,5,0,0">Jet : Total des points : ....</TextBlock>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Width="340px">
+            <TextBlock Margin="0,10,0,0">'Pseudo' tu peux relancer 3 dés !:.</TextBlock>
+            <CheckBox Margin="0,10,0,0">Relancer !</CheckBox>
+            <Button x:Name="btnJoueurSuivant" Width="350" Margin="0,10,0,0" Foreground="#D95829" Background="#F2E963">JOUEUR SUIVANT</Button>
+        </StackPanel>
+    
+    </Grid>
+
+    
+    
+</Window>
